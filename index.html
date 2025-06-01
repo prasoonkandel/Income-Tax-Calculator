@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nepal Income Tax Calculator 2081/2082</title>
+    <meta
+      name="description"
+      content="Nepal Income Tax Calculator for fiscal year 2081/2082. Calculate yearly or monthly tax for married and unmarried individuals." />
+    <meta
+      name="keywords"
+      content="Nepal income tax calculator, income tax Nepal, calculate tax Nepal, tax calculator 2081, 2082 tax Nepal, monthly tax, yearly tax, married tax, unmarried tax, income tax 2081/2082" />
+    <meta name="author" content="Prasoon Kandel" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://nepal-income-tax.netlify.app/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: #f4f6f8;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      nav {
+        background: linear-gradient(90deg, #0ea5e9, #3b82f6);
+        padding: 1rem 2rem;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      nav h1 {
+        font-size: 1.8rem;
+        color: #fff;
+        font-weight: 700;
+      }
+
+      .calculator {
+        background: #ffffff;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        max-width: 460px;
+        margin: 2rem auto;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #333;
+        font-size: 1.4rem;
+      }
+
+      label {
+        font-weight: 600;
+        color: #333;
+        font-size: 0.95rem;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 0.75rem;
+        margin: 0.5rem 0 1.2rem;
+        border: 2px solid #3b82f6;
+        border-radius: 10px;
+        background-color: #f9fafb;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+      }
+
+      input:focus,
+      select:focus {
+        border-color: #0ea5e9;
+        outline: none;
+        box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+      }
+
+      button {
+        background-color: #3b82f6;
+        color: #fff;
+        border: none;
+        padding: 0.8rem;
+        font-size: 1.1rem;
+        width: 100%;
+        border-radius: 10px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #2563eb;
+        transform: scale(1.02);
+      }
+
+      #result {
+        margin-top: 1.5rem;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.1rem;
+        color: #333;
+        background-color: #e0f2fe;
+        padding: 1rem;
+        border-radius: 8px;
+      }
+
+      footer {
+        margin-top: auto;
+        background: linear-gradient(90deg, #0ea5e9, #3b82f6);
+        text-align: center;
+        padding: 1rem 0;
+        font-size: 1rem;
+        color: #fff;
+        width: 100%;
+      }
+
+      @media (max-width: 500px) {
+        nav h1 {
+          font-size: 1.5rem;
+        }
+
+        .calculator {
+          padding: 1.5rem;
+        }
+
+        h2 {
+          font-size: 1.3rem;
+        }
+
+        button {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h1>Nepal Income Tax Calculator</h1>
+    </nav>
+
+    <div class="calculator">
+      <h2>Tax Calculator - FY 2081/2082</h2>
+
+      <label for="income">Monthly Salary(NPR):</label>
+      <input type="number" id="income" placeholder="e.g. 45000" />
+      <label for="income">Bonus (NPR):</label>
+      <input type="number" id="bonus" placeholder="e.g. 120000" />
+
+      <label for="income">No of months:</label>
+      <input type="number" id="months" placeholder="e.g. 12 or 13" />
+      <label for="status">Marital Status:</label>
+      <select id="status">
+        <option value="m">Married</option>
+        <option value="u">Unmarried</option>
+      </select>
+
+      <button onclick="calculateTax();">Calculate Tax</button>
+
+      <div id="result"></div>
+    </div>
+
+    <footer>
+      <p>
+        &copy; <span id="year"></span> Prasoon Kandel | Nepal Tax Calculator
+      </p>
+    </footer>
+
+    <script>
+      function calculateTax() {
+        let monthlyincome = parseFloat(document.getElementById("income").value);
+        let bonus = parseFloat(document.getElementById("bonus").value);
+        let no_months = parseFloat(document.getElementById("months").value);
+        const status = document.getElementById("status").value;
+
+        let tax = 0;
+
+        if (isNaN(monthlyincome) || monthlyincome < 0) {
+          document.getElementById("result").innerText =
+            "Please enter a valid income.";
+          return;
+        }
+        let salaryIncome = monthlyincome * no_months;
+        let totalIncome = salaryIncome + bonus;
+        let salaryTax = TaxCalculation(salaryIncome, status);
+        let totalTax = TaxCalculation(totalIncome, status);
+
+        let bonusTax = totalTax - salaryTax;
+        function TaxCalculation(income, status) {
+          let tax = 0;
+          if (status === "m") {
+            if (income <= 600000) tax = income * 0.01;
+            else if (income <= 800000)
+              tax = 600000 * 0.01 + (income - 600000) * 0.1;
+            else if (income <= 1100000)
+              tax = 600000 * 0.01 + 200000 * 0.1 + (income - 800000) * 0.2;
+            else if (income <= 2000000)
+              tax =
+                600000 * 0.01 +
+                200000 * 0.1 +
+                300000 * 0.2 +
+                (income - 1100000) * 0.3;
+            else if (income <= 5000000)
+              tax =
+                600000 * 0.01 +
+                200000 * 0.1 +
+                300000 * 0.2 +
+                900000 * 0.3 +
+                (income - 2000000) * 0.36;
+            else
+              tax =
+                600000 * 0.01 +
+                200000 * 0.1 +
+                300000 * 0.2 +
+                900000 * 0.3 +
+                3000000 * 0.36 +
+                (income - 5000000) * 0.39;
+          } else {
+            if (income <= 500000) tax = income * 0.01;
+            else if (income <= 700000)
+              tax = 500000 * 0.01 + (income - 500000) * 0.1;
+            else if (income <= 1000000)
+              tax = 500000 * 0.01 + 200000 * 0.1 + (income - 700000) * 0.2;
+            else if (income <= 2000000)
+              tax =
+                500000 * 0.01 +
+                200000 * 0.1 +
+                300000 * 0.2 +
+                (income - 1000000) * 0.3;
+            else if (income <= 5000000)
+              tax =
+                500000 * 0.01 +
+                200000 * 0.1 +
+                300000 * 0.2 +
+                1000000 * 0.3 +
+                (income - 2000000) * 0.36;
+            else
+              tax =
+                500000 * 0.01 +
+                200000 * 0.1 +
+                300000 * 0.2 +
+                1000000 * 0.3 +
+                3000000 * 0.36 +
+                (income - 5000000) * 0.39;
+          }
+          return tax;
+        }
+
+        const yearlyTax = totalTax;
+        const monthlyTax = salaryTax / 12;
+
+        document.getElementById("result").innerHTML = `
+            <small>Note: Bonus tax is included in yearly tax !</small>
+          <p><strong>Yearly Tax:</strong> NPR ${yearlyTax.toFixed(2)}</p>
+          <p><strong>Monthly Tax:</strong> NPR ${monthlyTax.toFixed(2)}</p>
+             <p><strong>Bonus Tax:</strong> NPR ${bonusTax.toFixed(2)}</p>
+         
+        `;
+      }
+
+      document.getElementById("year").innerText = new Date().getFullYear();
+    </script>
+  </body>
+</html>
