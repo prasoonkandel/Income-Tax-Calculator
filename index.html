@@ -127,7 +127,7 @@
         font-size: 1rem;
         color: #fff;
         width: 100%;
-      .note{
+      small {
         font-size: 11px;
         }
 
@@ -266,7 +266,7 @@
         const monthlyTax = salaryTax / 12;
 
         document.getElementById("result").innerHTML = `
-            <p class="note">Note: Bonus tax is included in yearly tax but not in monthly tax!</p>
+            <small>Note: Bonus tax is included in yearly tax but not in monthly tax!</small>
           <p><strong>Yearly Tax:</strong> NPR ${yearlyTax.toFixed(2)}</p>
           <p><strong>Monthly Tax:</strong> NPR ${monthlyTax.toFixed(2)}</p>
              <p><strong>Bonus Tax:</strong> NPR ${bonusTax.toFixed(2)}</p>
