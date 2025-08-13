@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f4f6f8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  background: linear-gradient(90deg, #0ea5e9, #3b82f6);
+  padding: 1rem 2rem;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+nav h1 {
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+.calculator {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 460px;
+  margin: 2rem auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 1.4rem;
+}
+
+label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0 1.2rem;
+  border: 2px solid #3b82f6;
+  border-radius: 10px;
+  background-color: #f9fafb;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #0ea5e9;
+  outline: none;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+button {
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  width: 100%;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #2563eb;
+  transform: scale(1.02);
+}
+
+#result {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #333;
+  background-color: #e0f2fe;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+footer {
+  margin-top: auto;
+  background: linear-gradient(90deg, #0ea5e9, #3b82f6);
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1rem;
+  color: #fff;
+  width: 100%;
+  small {
+    font-size: 12px;
+  }
+
+  @media (max-width: 500px) {
+    nav h1 {
+      font-size: 1.5rem;
+    }
+
+    .calculator {
+      padding: 1.5rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+    }
+
+    button {
+      font-size: 1rem;
+    }
+  }
+}
