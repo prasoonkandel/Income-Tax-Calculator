@@ -13,10 +13,9 @@ function calculateTax() {
   }
   let salaryIncome = monthlyincome * no_months;
   let totalIncome = salaryIncome + bonus;
-  let salaryTax = TaxCalculation(salaryIncome, status);
+
   let totalTax = TaxCalculation(totalIncome, status);
 
-  let bonusTax = totalTax - salaryTax;
   function TaxCalculation(income, status) {
     let tax = 0;
     if (status === "m") {
@@ -76,15 +75,13 @@ function calculateTax() {
   }
 
   const yearlyTax = totalTax;
-  const monthlyTax = salaryTax / 12;
+  const monthlyTax = yearlyTax / 12;
 
   document.getElementById("result").innerHTML = `
-            <small>Note: Bonus tax is included in yearly tax but not in monthly tax!</small>
+     
             <br />
           <p><strong>Yearly Tax:</strong> NPR ${yearlyTax.toFixed(2)}</p>
           <p><strong>Monthly Tax:</strong> NPR ${monthlyTax.toFixed(2)}</p>
-             <p><strong>Bonus Tax:</strong> NPR ${bonusTax.toFixed(2)}</p>
-         
         `;
 }
 
