@@ -84,5 +84,3 @@ function calculateTax() {
           <p><strong>Monthly Tax:</strong> NPR ${monthlyTax.toFixed(2)}</p>
         `;
 }
-
-document.getElementById("year").innerText = new Date().getFullYear();
