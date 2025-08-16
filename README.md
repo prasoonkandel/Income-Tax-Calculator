@@ -61,5 +61,5 @@ _(Example – update if your calculator uses different slabs)_
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/prasoonkandel/nepal-income-tax-calculator.git
+   git clone https://github.com/prasoonkandel/Income-Tax-Calculator
    ```
