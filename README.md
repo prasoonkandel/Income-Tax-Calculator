@@ -42,12 +42,6 @@ _(Example – update if your calculator uses different slabs)_
 
 ---
 
-## 🚀 Live Demo
-
-[🔗 Open Calculator](#) _(https://nepal-income-tax.netlify.app/)_
-
----
-
 ## 🛠️ Tech Stack
 
 - **HTML5**
