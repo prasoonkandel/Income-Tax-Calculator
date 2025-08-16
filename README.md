@@ -55,8 +55,7 @@ _(Example – update if your calculator uses different slabs)_
 - **JavaScript** (Calculation logic)
 - **FontAwesome** (Icons)
 - **Responsive Design Techniques**
-
----
+- ***
 
 ## 📦 Installation & Usage
 
