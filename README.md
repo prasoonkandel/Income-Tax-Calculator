@@ -6,6 +6,7 @@ This tool helps individuals calculate their **annual tax liability** quickly and
 ---
 
 ## 📌 Features
+
 - ✅ **Based on Nepal’s FY 2082/83 Income Tax Rules**
 - 📱 **Mobile-responsive design** – works seamlessly on any device
 - 🎨 **Modern UI** with hover animations and advanced styling
@@ -16,6 +17,7 @@ This tool helps individuals calculate their **annual tax liability** quickly and
 ---
 
 ## 📊 How It Works
+
 1. Enter your **annual income** in Nepali Rupees (NPR).
 2. Add any **bonus or additional taxable earnings**.
 3. The calculator automatically applies:
@@ -26,10 +28,11 @@ This tool helps individuals calculate their **annual tax liability** quickly and
 ---
 
 ## 📜 Tax Rates Reference (FY 2082/83)
-*(Example – update if your calculator uses different slabs)*
+
+_(Example – update if your calculator uses different slabs)_
 
 | **Annual Income (NPR)** | **Tax Rate** (Individual) |
-|-------------------------|---------------------------|
+| ----------------------- | ------------------------- |
 | Up to 500,000           | 1% Social Security Tax    |
 | 500,001 – 700,000       | 10%                       |
 | 700,001 – 1,000,000     | 20%                       |
@@ -40,11 +43,13 @@ This tool helps individuals calculate their **annual tax liability** quickly and
 ---
 
 ## 🚀 Live Demo
-[🔗 Open Calculator](#) *(Add your live site link here)*
+
+[🔗 Open Calculator](#) _(https://nepal-income-tax.netlify.app/)_
 
 ---
 
 ## 🛠️ Tech Stack
+
 - **HTML5**
 - **CSS3** (Custom styling + hover animations)
 - **JavaScript** (Calculation logic)
@@ -54,6 +59,8 @@ This tool helps individuals calculate their **annual tax liability** quickly and
 ---
 
 ## 📦 Installation & Usage
+
 1. **Clone the repository**
    ```bash
    git clone https://github.com/yourusername/nepal-income-tax-calculator.git
+   ```
