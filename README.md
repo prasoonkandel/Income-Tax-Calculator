@@ -40,13 +40,13 @@ _(Example – update if your calculator uses different slabs)_
 
 ---
 
-## 🚀 Live Demo
+## Live Demo
 
 [🔗 Open Calculator](#) _(https://nepal-income-tax.netlify.app/)_
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **HTML5**
 - **CSS3** (Custom styling + hover animations)
@@ -55,7 +55,7 @@ _(Example – update if your calculator uses different slabs)_
 - **Responsive Design Techniques**
 - **Canva** (favicon and designs)
 
-## 📦 Installation & Usage
+## Installation & Usage
 
 1. **Clone the repository**
    ```bash
