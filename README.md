@@ -1,28 +1,26 @@
 # Nepal Income Tax Calculator (Fiscal Year 2082/83)
 
-A modern, mobile-responsive, and SEO-optimized **Income Tax Calculator** built specifically for Nepal’s tax system for the fiscal year **2082/83**.  
-This tool helps individuals calculate their **annual tax liability** quickly and accurately according to the latest **Nepal Government income tax rules**.
+This is a **Income Tax Calculator** built for Nepal’s tax system for the fiscal year **2082/83**.  
+This website helps people calculate their **annual tax liability** according to the latest **Nepal Government income tax rules**.
 
 ---
 
-## 📌 Features
+## Features
 
 - ✅ **Based on Nepal’s FY 2082/83 Income Tax Rules**
-- 📱 **Mobile-responsive design** – works seamlessly on any device
-- 🎨 **Modern UI** with hover animations and advanced styling
-- 🖥️ **User-friendly interface** for fast and easy tax calculation
-- 🔢 **Bonus input support** – includes taxable allowances and bonus calculations
-- 🌐 **SEO optimized** for better search ranking
+- 📱 **Mobile-responsive design** 
+- 🎨 **Modern UI** 
+- 🖥️ **User-friendly interface**
+- 🔢 **Bonus input support** 
+- 🌐 **SEO optimized** 
 
 ---
 
-## 📊 How It Works
+## How It Works
 
 1. Enter your **annual income** in Nepali Rupees (NPR).
 2. Add any **bonus or additional taxable earnings**.
-3. The calculator automatically applies:
-   - Applicable **slab rates** based on the latest **Nepal Income Tax Rules (2082/83)**
-   - **Rebate/exemption rules** where applicable
+3. The calculator automatically calculates your income tax
 4. View your **total taxable income** and **tax payable** instantly.
 
 ---
