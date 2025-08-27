@@ -6,15 +6,10 @@ function calculateTax() {
 
   let tax = 0;
 
-  if (isNaN(monthlyincome) || monthlyincome < 0) {
-    document.getElementById("result").innerText =
-      "Please enter a valid income.";
-    return;
-  }
   let salaryIncome = monthlyincome * no_months;
-  let totalIncome = salaryIncome + bonus;
+  let annualIncome = salaryIncome + bonus;
 
-  let totalTax = TaxCalculation(totalIncome, status);
+  let totalTax = TaxCalculation(annualIncome, status);
 
   function TaxCalculation(income, status) {
     let tax = 0;
@@ -77,10 +72,6 @@ function calculateTax() {
   const yearlyTax = totalTax;
   const monthlyTax = yearlyTax / 12;
 
-  document.getElementById("result").innerHTML = `
-     
-            <br />
-          <p><strong>Yearly Tax:</strong> NPR ${yearlyTax.toFixed(2)}</p>
-          <p><strong>Monthly Tax:</strong> NPR ${monthlyTax.toFixed(2)}</p>
-        `;
+  console.log("Yearly Tax:", yearlyTax);
+  console.log("Monthly Tax:", monthlyTax);
 }

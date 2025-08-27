@@ -2,20 +2,26 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "Mozilla Text", sans-serif;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 
 body {
   background: #f4f6f8;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
 }
 
 nav {
-  background: linear-gradient(90deg, #0ea5e9, #3b82f6);
+  background: #2467d2;
   padding: 1rem 2rem;
   width: 100%;
   text-align: center;
@@ -23,85 +29,120 @@ nav {
 }
 
 nav h1 {
+  font-family: "PT Serif", serif;
   font-size: 1.8rem;
   color: #fff;
   font-weight: 700;
 }
-
-.calculator {
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 460px;
-  margin: 2rem auto;
+.subheading {
+  text-align: center;
+  margin-top: 30px;
+}
+#form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 90%;
+  width: 1000px;
+  min-width: 800px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  padding: 15px;
+  background-color: #b6d2ff86;
+  position: relative;
+}
+#form h1 {
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  color: #0341a5;
+  font-weight: 700;
+}
+#form .hr {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #000000;
+}
+.deduction {
+  margin-left: 1rem;
 }
 
-h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: #333;
-  font-size: 1.4rem;
+.input-group {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 label {
-  font-weight: 600;
-  color: #333;
-  font-size: 0.95rem;
+  flex: 1;
+  margin-right: 0.7rem;
+  font-size: 14px;
 }
-
 input,
 select {
-  width: 100%;
-  padding: 0.75rem;
-  margin: 0.5rem 0 1.2rem;
-  border: 2px solid #3b82f6;
-  border-radius: 10px;
-  background-color: #f9fafb;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-}
-
-input:focus,
-select:focus {
-  border-color: #0ea5e9;
+  display: inline-block;
   outline: none;
-  box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
-}
-
-button {
-  background-color: #3b82f6;
-  color: #fff;
   border: none;
-  padding: 0.8rem;
-  font-size: 1.1rem;
-  width: 100%;
-  border-radius: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  background-color: #2563eb;
-  transform: scale(1.02);
-}
-
-#result {
-  margin-top: 1.5rem;
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.1rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #fff;
   color: #333;
-  background-color: #e0f2fe;
-  padding: 1rem;
-  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+select option {
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+
+select {
+  appearance: none;
+  cursor: pointer;
+}
+form button {
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  max-width: 90%;
+  width: 1000px;
+  min-width: 800px;
+  margin: auto;
+
+  margin-bottom: 40px;
+}
+
+.button-group button {
+  border: none;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #fff;
+  transition: background 0.2s ease;
+}
+
+.button-group .reset button {
+  background: #f44336;
+}
+
+.button-group .calculate button {
+  background: #4caf50;
 }
 
 footer {
   margin-top: auto;
-  background: linear-gradient(90deg, #0ea5e9, #3b82f6);
+  background: #0341a5;
   text-align: center;
   padding: 1rem 0;
   font-size: 1rem;
@@ -110,22 +151,32 @@ footer {
   small {
     font-size: 12px;
   }
+}
+@media (max-width: 842px) {
+  #form {
+    flex-direction: column;
+    justify-content: left;
+    margin-left: 0;
+    max-width: 90%;
+    min-width: 400px;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 20px;
 
-  @media (max-width: 500px) {
-    nav h1 {
-      font-size: 1.5rem;
-    }
+    background-color: #b6d2ff86;
+  }
+  .button-group {
+    max-width: 90%;
+    min-width: 400px;
+    margin: auto;
+    flex-direction: column;
+    /* align-items: stretch;
+    margin-right: 20px;
+    margin-left: 20px; */
+  }
 
-    .calculator {
-      padding: 1.5rem;
-    }
-
-    h2 {
-      font-size: 1.3rem;
-    }
-
-    button {
-      font-size: 1rem;
-    }
+  nav h1 {
+    font-size: 1.5rem;
   }
 }

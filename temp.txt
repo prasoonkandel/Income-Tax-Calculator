@@ -1,0 +1,4 @@
+      <select id="status">
+        <option value="m">Married</option>
+        <option value="u">Unmarried</option>
+      </select>

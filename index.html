@@ -14,43 +14,92 @@
     />
     <meta name="author" content="Prasoon Kandel" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://nepal-income-tax.netlify.app/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mozilla+Headline:wght@200..700&family=Mozilla+Text:wght@200..700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Signika+Negative:wght@300..700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <nav>
-      <h1>Nepal Income Tax Calculator</h1>
+      <h1>Nepal Income Tax</h1>
     </nav>
-
-    <div class="calculator">
-      <h2>Tax Calculator - FY 2082/2083</h2>
-
-      <label for="income">Monthly Salary(NPR):</label>
-      <input type="number" id="income" placeholder="e.g. 45000" />
-      <label for="income">Bonus (NPR):</label>
-      <input type="number" id="bonus" placeholder="e.g. 120000" />
-
-      <label for="income">No of months:</label>
-      <input type="number" id="months" placeholder="e.g. 12 or 13" />
-      <label for="status">Marital Status:</label>
-      <select id="status">
-        <option value="m">Married</option>
-        <option value="u">Unmarried</option>
-      </select>
-
-      <button onclick="calculateTax();">Calculate Tax</button>
-
-      <div id="result"></div>
+    <div class="subheading">
+      <h2>Income Tax Calculator - FY 2082/2083</h2>
     </div>
+    <div class="main-form">
+      <form>
+        <div id="form">
+          <div class="income">
+            <div class="input-group hr">
+              <label for="Status">Nature of Employee</label>
+              <select id="status" required>
+                <option value="m">Married</option>
+                <option value="u">Unmarried</option>
+              </select>
+            </div>
 
+            <h1>Annual Income</h1>
+
+            <div class="input-group">
+              <label for="No of Months">No of Months</label>
+              <input type="number" id="months" />
+            </div>
+            <div class="input-group">
+              <label for="Monthly Salary">Monthly Salary</label>
+              <input type="number" id="salary" />
+            </div>
+            <div class="input-group">
+              <label for="Bonus">Bonus</label>
+              <input type="number" id="bonus" />
+            </div>
+            <div class="input-group hr">
+              <label for="others">Other Allowances</label>
+              <input type="number" id="others" />
+            </div>
+
+            <div class="input-group">
+              <label for="Total Income">Total Income</label>
+              <input type="number" id="total-income" />
+            </div>
+          </div>
+          <div class="deductions">
+            <h1>Annual Deductions</h1>
+
+            <div class="input-group">
+              <label for="Provident Fund">Provident Fund</label>
+              <input type="number" id="epf" />
+            </div>
+            <div class="input-group">
+              <label for="Citizen Investment">Citizen Investment</label>
+
+              <input type="number" id="cit" />
+            </div>
+            <div class="input-group hr">
+              <label for="Insurance">Insurance</label>
+              <input type="number" id="insurance" />
+            </div>
+            <div class="input-group">
+              <label for="Total Deductions">Total Deductions</label>
+              <input type="number" id="total-deductions" />
+            </div>
+          </div>
+        </div>
+        <div class="button-group">
+          <div class="reset">
+            <button type="reset">Reset Values</button>
+          </div>
+          <div class="calculate">
+            <button type="submit">Calculate Tax</button>
+          </div>
+        </div>
+      </form>
+    </div>
     <footer>
       <p>
-        &copy; <span id="year"></span> Prasoon Kandel | Nepal Tax Calculator
+        &copy; <span id="year"></span> Prasoon Kandel | All rights reserved.
       </p>
     </footer>
 
