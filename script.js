@@ -1,16 +1,58 @@
-function calculateTax() {
-  let monthlyincome = parseFloat(document.getElementById("income").value);
+form = document.getElementById("tax-form");
+console.log("Hi");
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  let monthlysalary = parseFloat(document.getElementById("salary").value);
   let bonus = parseFloat(document.getElementById("bonus").value);
   let no_months = parseFloat(document.getElementById("months").value);
   const status = document.getElementById("status").value;
 
+  let others = parseFloat(document.getElementById("others").value);
   let tax = 0;
+  let epf = parseFloat(document.getElementById("epf").value);
+  let cit = parseFloat(document.getElementById("cit").value);
+  let insurance = parseFloat(document.getElementById("insurance").value);
 
-  let salaryIncome = monthlyincome * no_months;
-  let annualIncome = salaryIncome + bonus;
+  let salaryIncome = monthlysalary * no_months;
+  let totalDeductions = epf + cit + insurance;
+  let totalIncome = salaryIncome + bonus + others;
+  if (isNaN(totalDeductions)) {
+    totalDeductions = parseFloat(
+      document.getElementById("totalDeductions").value
+    );
+  }
+  if (isNaN(totalIncome)) {
+    totalIncome = parseFloat(document.getElementById("totalIncome").value);
+  }
+  document.getElementById("totalDeductions").value = totalDeductions;
+  document.getElementById("totalIncome").value = totalIncome;
 
-  let totalTax = TaxCalculation(annualIncome, status);
+  if (isNaN(totalDeductions)) {
+    alert("Total deduction can't be empty");
+    return;
+  }
+  if (isNaN(totalIncome)) {
+    alert("Total income can't be empty");
+    return;
+  }
 
+  let taxableAmount = totalIncome - totalDeductions;
+  let totalTax = TaxCalculation(taxableAmount, status);
+
+  const yearlyTax = totalTax;
+  const monthlyTax = yearlyTax / 12;
+
+  console.log("Yearly Tax:", yearlyTax);
+  console.log("Monthly Tax:", monthlyTax);
+  document.getElementById("ai").value = totalIncome.toFixed(2);
+  document.getElementById("ad").value = totalDeductions.toFixed(2);
+  document.getElementById("yt").value = yearlyTax.toFixed(2);
+  document.getElementById("mt").value = monthlyTax.toFixed(2);
+  let button = document.getElementById("close-btn");
+  document.body.classList.toggle("pop");
+  button.addEventListener("click", () => {
+    document.body.classList.remove("pop");
+  });
   function TaxCalculation(income, status) {
     let tax = 0;
     if (status === "m") {
@@ -68,10 +110,4 @@ function calculateTax() {
     }
     return tax;
   }
-
-  const yearlyTax = totalTax;
-  const monthlyTax = yearlyTax / 12;
-
-  console.log("Yearly Tax:", yearlyTax);
-  console.log("Monthly Tax:", monthlyTax);
-}
+});

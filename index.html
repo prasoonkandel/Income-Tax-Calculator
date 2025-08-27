@@ -30,7 +30,7 @@
       <h2>Income Tax Calculator - FY 2082/2083</h2>
     </div>
     <div class="main-form">
-      <form>
+      <form id="tax-form">
         <div id="form">
           <div class="income">
             <div class="input-group hr">
@@ -62,7 +62,7 @@
 
             <div class="input-group">
               <label for="Total Income">Total Income</label>
-              <input type="number" id="total-income" />
+              <input type="number" id="totalIncome" />
             </div>
           </div>
           <div class="deductions">
@@ -83,7 +83,7 @@
             </div>
             <div class="input-group">
               <label for="Total Deductions">Total Deductions</label>
-              <input type="number" id="total-deductions" />
+              <input type="number" id="totalDeductions" />
             </div>
           </div>
         </div>
@@ -96,6 +96,33 @@
           </div>
         </div>
       </form>
+    </div>
+    <div class="overlay">
+      <div class="popup">
+        <h2>Tax Summary</h2>
+
+        <div class="input-group">
+          <label>Annual Income</label>
+          <input type="number" id="ai" value="0" readonly />
+        </div>
+
+        <div class="input-group">
+          <label>Annual Deduction</label>
+          <input type="number" id="ad" value="0" readonly />
+        </div>
+
+        <div class="input-group">
+          <label>Yearly Tax</label>
+          <input type="number" id="yt" value="0" readonly />
+        </div>
+
+        <div class="input-group">
+          <label>Monthly Tax</label>
+          <input type="number" id="mt" value="0" readonly />
+        </div>
+
+        <a id="close-btn" class="close-btn">X</a>
+      </div>
     </div>
     <footer>
       <p>
