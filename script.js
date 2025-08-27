@@ -38,7 +38,7 @@ form.addEventListener("submit", (event) => {
 
   let taxableAmount = totalIncome - totalDeductions;
   let totalTax = TaxCalculation(taxableAmount, status);
-  //fdchdfhwerfdgvecdg
+
   const yearlyTax = totalTax;
   const monthlyTax = yearlyTax / 12;
 
