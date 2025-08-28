@@ -113,9 +113,10 @@ Prasoon Kandel project
     <div class="main-form">
       <form id="tax-form">
         <div id="form">
+          <!-- Income Section -->
           <div class="income">
             <div class="input-group hr">
-              <label for="Status">Nature of Employee</label>
+              <label for="status">Nature of Employee</label>
               <select id="status" required>
                 <option value="m">Married</option>
                 <option value="u">Unmarried</option>
@@ -125,49 +126,57 @@ Prasoon Kandel project
             <h1>Annual Income</h1>
 
             <div class="input-group">
-              <label for="No of Months">No of Months</label>
-              <input type="number" id="months" />
-            </div>
-            <div class="input-group">
-              <label for="Monthly Salary">Monthly Salary</label>
-              <input type="number" id="salary" />
-            </div>
-            <div class="input-group">
-              <label for="Bonus">Bonus</label>
-              <input type="number" id="bonus" />
-            </div>
-            <div class="input-group hr">
-              <label for="others">Other Allowances</label>
-              <input type="number" id="others" />
+              <label for="salary">Monthly Salary</label>
+              <input type="number" id="salary" step="0.01" />
             </div>
 
             <div class="input-group">
-              <label for="Total Income">Total Income</label>
-              <input type="number" id="totalIncome" />
+              <label for="festival">Festival Allowances</label>
+              <input type="number" id="festival" step="0.01" />
+            </div>
+
+            <div class="input-group">
+              <label for="bonus">Bonus</label>
+              <input type="number" id="bonus" step="0.01" />
+            </div>
+
+            <div class="input-group hr">
+              <label for="others">Other Allowances</label>
+              <input type="number" id="others" step="0.01" />
+            </div>
+
+            <div class="input-group">
+              <label for="totalIncome">Total Income</label>
+              <input type="number" id="totalIncome" readonly />
             </div>
           </div>
+
           <div class="deductions">
             <h1>Annual Deductions</h1>
 
             <div class="input-group">
-              <label for="Provident Fund">Provident Fund</label>
-              <input type="number" id="epf" />
+              <label for="epf">Provident Fund (%)</label>
+              <input type="number" id="epf" value="10" step="0.01" />
             </div>
-            <div class="input-group">
-              <label for="Citizen Investment">Citizen Investment</label>
 
-              <input type="number" id="cit" />
-            </div>
-            <div class="input-group hr">
-              <label for="Insurance">Insurance</label>
-              <input type="number" id="insurance" />
-            </div>
             <div class="input-group">
-              <label for="Total Deductions">Total Deductions</label>
-              <input type="number" id="totalDeductions" />
+              <label for="cit">Citizen Investment</label>
+              <input type="number" id="cit" step="0.01" />
+            </div>
+
+            <div class="input-group hr">
+              <label for="insurance">Insurance</label>
+              <input type="number" id="insurance" step="0.01" />
+            </div>
+
+            <div class="input-group">
+              <label for="totalDeductions">Total Deductions</label>
+              <input type="number" id="totalDeductions" readonly />
             </div>
           </div>
         </div>
+
+        <!-- Buttons -->
         <div class="button-group">
           <div class="reset">
             <button type="reset">Reset Values</button>
@@ -177,6 +186,15 @@ Prasoon Kandel project
           </div>
         </div>
       </form>
+      <div class="desc">
+        <p>
+          Nepal Income Tax is an income tax calculator made by Prasoon Kandel
+          that accurately calculates your tax according to the latest tax slabs
+          for the fiscal year 2082/2083. It is ideal for both married couples
+          and unmarried individuals. This project is open-source and available
+          on GitHub. It is made by Prasoon Kandel, a young developer from Nepal.
+        </p>
+      </div>
     </div>
     <div class="overlay">
       <div class="popup">
@@ -184,22 +202,22 @@ Prasoon Kandel project
 
         <div class="input-group">
           <label>Annual Income</label>
-          <input type="number" id="ai" value="0" readonly />
+          <input type="float" id="ai" value="0" readonly />
         </div>
 
         <div class="input-group">
           <label>Annual Deduction</label>
-          <input type="number" id="ad" value="0" readonly />
+          <input type="float" id="ad" value="0" readonly />
         </div>
 
         <div class="input-group">
           <label>Yearly Tax</label>
-          <input type="number" id="yt" value="0" readonly />
+          <input type="float" id="yt" value="0" readonly />
         </div>
 
         <div class="input-group">
           <label>Monthly Tax</label>
-          <input type="number" id="mt" value="0" readonly />
+          <input type="float" id="mt" value="0" readonly />
         </div>
 
         <a id="close-btn" class="close-btn">X</a>
